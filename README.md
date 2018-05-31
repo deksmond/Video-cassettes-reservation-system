@@ -1,23 +1,28 @@
 # C-Database
-A reservation system designed in C which creates files, stores and does basic manipulations. Un système de réservation conçu en C qui crée des fichiers, stocke et effectue des manipulations de base.
 
-NB- THE DESCRIPTION OF THIS COMES IN TWO LANGUAGES HERE FRO ENGLISH SCROLL DOWN FOR FRENCH
+A reservation system designed in C which creates files, stores and does basic manipulations. 
+
+NB- THE DESCRIPTION OF THIS COMES IN TWO LANGUAGES HERE FOR ENGLISH SCROLL DOWN FOR FRENCH
 
 //ENGLISH
+
 PROJECT REALIZED- RESERVATION SYSTEM FOR VIDEO CASSETTES
 
 DESCRIPTION
+
 The objective of this project is to realize a database of records that takes all the necessary steps to record, display and borrow a cassette, it allows to take details of a borrower who wants to take one or more cassettes or return cassettes borrowed.
 
  DESCRIPTION OF EACH PHASE OF THE PROJECT
-    1. The three INCLUDE is called the library for entry and exit ...
-    2. There are two structures- VCassette and Vprinter that contain fields for dealing with different and specific cases.
-    3. Prototypes that facilitate finding functions in the program
-    4. In the main () function, which is the main program, we make a menu that contains the lists of choices to make. There are 7 choices to make in the menu.
+ 
+   1. The three INCLUDE is called the library for entry and exit ...
+   2. There are two structures- VCassette and Vprinter that contain fields for dealing with different and specific cases.
+   3. Prototypes that facilitate finding functions in the program
+   4. In the main () function, which is the main program, we make a menu that contains the lists of choices to make. There are 7          choices to make in the menu.
 4a. We made a case switch to access the functions by an alphabet.
 
 FUNCTIONS
-    1. void addCassette (): this function is used to add one or more new cassettes in the list of existing cassettes, the contents are the name of the cassette, the year of production of the cassette, a code for each cassette and the quantity of the cassette.
+
+1. void addCassette (): this function is used to add one or more new cassettes in the list of existing cassettes, the contents are the name of the cassette, the year of production of the cassette, a code for each cassette and the quantity of the cassette.
 Here we create a file called ListedesCassette.txt to save the details of each cassette with fopen() in append mode and we use the fields of the VCassette structure.
 We tests with a condition to find if the file is not NULL, if the condition is met, we demand :
     a. The name of the cassette
@@ -51,7 +56,7 @@ When we give a quantity we check for 3 conditions:
     3. If the quantity requested is less than or equal to the quantity available, the amount available is subtracted from the desired quantity, and now the file will contain the quantity remaining after the subtraction.
 After checking the quantity, it is shown that the cassette is NOT FOUND if the borrower puts the name of a tape that does not exist in the file.
 
-   5. void displayBorrowers(): This function makes a display of all the borrowers that are in the file on the console. This shows each borrower with his surname, first name, the tape borrowed, address and phone number. We made a loop to access DetailsofPackers.txt and to check if the file is different from NULL and if the condition is verified it displays all, otherwise nothing will display. After we use the pointer pborne with fclose() to stop the access to the file DetailsofPackers.txt.
+5. void displayBorrowers(): This function makes a display of all the borrowers that are in the file on the console. This shows each borrower with his surname, first name, the tape borrowed, address and phone number. We made a loop to access DetailsofPackers.txt and to check if the file is different from NULL and if the condition is verified it displays all, otherwise nothing will display. After we use the pointer pborne with fclose() to stop the access to the file DetailsofPackers.txt.
     
 6. void returnsCassette (): This function allows the borrower to return the cassette(s) borrowed.
 We access the file ListedesCassette.txt with fopen() in the read mode and test with a condtion if the pointer is different from NULL, if the condition is verified we ask:
@@ -61,7 +66,7 @@ After putting the name of the tape, we read the file ListedesCassette.txt and we
 When we give the quantity borrowed we add to the quantity available in the file ListedesCassette.txt. There is an update every time a borrower returns a cassette.
 After addititon of the amount borrowed to the quantity in the file, we get a confirmation message: THANK YOU FOR RETURNING THE CASSETTE. And if we put a cassette or quantity that is incorrect in the file, we display: ENTER THE CORRECT INFORMATION. At the end we use the pborne pointer with fclose() to stop access to the file ListedesCassette.txt.
 
- 7. void deleteBorrower(): The last function is to delete a borrower after returning the tape(s) borrowed with all his details. We open the file DetailsofPackers.txt with fopen() in read mode for reading and we search if the pointer is different from NULL, then we ask for:
+7. void deleteBorrower(): The last function is to delete a borrower after returning the tape(s) borrowed with all his details. We open the file DetailsofPackers.txt with fopen() in read mode for reading and we search if the pointer is different from NULL, then we ask for:
     at. The borrower's name
 We use this information to browse in the file and when we find the borrower it deletes all the details in relation to this borrower.
 In the case where the name given is different from what is in the file it displays an error message: THIS BORROWER DOES NOT EXIST.
@@ -70,24 +75,28 @@ In the case where the name given is different from what is in the file it displa
 To browse the two files DetailsofPackers.txt and ListdesCassette.txt we use a temporary file tmp.txt to read and write for whatever you want.
 
 
+Un système de réservation conçu en C qui crée des fichiers, stocke et effectue des manipulations de base.
 
 //FRENCH
 
 PROJET REALISER- SYSTEME DE RESERVATION DES CASSETTES VIDEO
 
 DESCRIPTION
+
 L’objective de ce projet est pour realiser une base des donees qui prend tous les donees necessaire pour enregistrer, afficher et emprunter une cassette, il permet de prendre des details d’un emprunteur qui veut prendre un ou plusieurs cassettes ou bien retourner des cassettes emprunter.
 
  DESCRIPTION DE CHAQUE PHASE DU PROJET
-    1. Les trois INCLUDE c’est les appelle des bibliotheque pour les entrees et sorties…
-    2. Il y a deux structure VCassette et VEmprunteur qui contient des champs pour traiter les cas differents et specifique.
-    3. Les prototypes qui faciliter a trouver des fonction dans le programme
-    4. Dans la fonction main() qui est le program principal, on fait un menu qui contient les listes des choix a faire. Il y a 7 choix a faire dans le menu.
+ 
+   1. Les trois INCLUDE c’est les appelle des bibliotheque pour les entrees et sorties…
+   2. Il y a deux structure VCassette et VEmprunteur qui contient des champs pour traiter les cas differents et specifique.
+   3. Les prototypes qui faciliter a trouver des fonction dans le programme
+   4. Dans la fonction main() qui est le program principal, on fait un menu qui contient les listes des choix a faire. Il y a 7 choix a faire dans le menu.
   4a. On a fait un cas vaut pour acceder la fonction demander par un alphabet.
   
   
 LES FONCTIONS
-    1. void ajouterCassette() : cette fonction est utiliser pour ajouter un ou plusieurs nouvelle cassettes dans la liste des cassettes existant, les contenus sont le nom de la cassette, l’annee de production de la cassette, une code pour chaque cassette et la quantite de la cassette.
+
+   1. void ajouterCassette() : cette fonction est utiliser pour ajouter un ou plusieurs nouvelle cassettes dans la liste des cassettes existant, les contenus sont le nom de la cassette, l’annee de production de la cassette, une code pour chaque cassette et la quantite de la cassette.
 Ici on cree un fichier qui s’appelle ListedesCassette.txt pour sauvegarde des details de chaque cassette avec fopen() dans le mode append et on utilise les champs de la structure VCassette.
 On teste avec une condition pour chercher si le fichier n’est pas NULL, si la condition est verifier on demande :
     a. Le nom de la cassette
