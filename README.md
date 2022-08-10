@@ -28,13 +28,11 @@ After having this information, we make an fprintf() to take the 4 informations e
 
 3. void addBorrower(): this function is used to add one or more new borrower who wants one or more cassettes in a file DetailsofBorrowers.txt, it contains the surname and first name of borrower, the name of the cassette , the borrower's address and telephone number. Here, we create a file named DetailsofPackers.txt to save the details of each borrower with fopen() in read mode and we use the fields of the VPC structure.
 We test with a condition to find if the file is not NULL, if the condition is met we ask for:
-
     a. The borrower's surname
     b. The first name of the borrower
     c. The name of the cassette
     
 Here after we put the name of the tape, we do a scanf(), we loop to check if the tape requested exists in the cassette's file, if it exists there is a message of availability: THE CASSETTE REQUESTED IS AVAILABLE and we pass on to the following to fill the other informations:
-
     d. The address of the borrower
     e. The telephone number of the borrower
     
@@ -43,15 +41,12 @@ And now we use the pointer pBorne with fclose() to stop the access to the file D
 
 4. void borrowCassette (): this function allows a client to borrow one or more desired cassette.
 We access the file ListedesCassette.txt with fopen() in the read mode and test with a condtion if the pointer is different from NULL, if the condition is verified we ask for:
-
     a. The name of the cassette
     
 After putting the name of the tape, we read the file ListedesCassette.txt and we use a loop to check if the tape requested exists in the cassette's file. If it does, there is a message of its existence: FOUND and we pass on to fill the other informations:
-
     b. The quantity of the cassette
     
 When we give a quantity we check for 3 conditions:
-
     1. If the quantity asked is greater than the quantity available. We receive a message: The quantity available is less than the quantity you want.
     2. If the quantity requested is less than zero. It displays: Put a quantity greater than zero.
     3. If the quantity requested is less than or equal to the quantity available. The amount available is subtracted from the desired quantity, and now the file will contain the quantity remaining after the subtraction.
@@ -62,11 +57,9 @@ After checking the quantity, it is shown that the cassette is NOT FOUND, if the 
     
 6. void returnsCassette (): This function allows the borrower to return the cassette(s) borrowed.
 We access the file ListedesCassette.txt with fopen() in the read mode and test with a condtion if the pointer is different from NULL, if the condition is verified we ask:
-
     c. The name of the cassette
     
 After putting the name of the tape, we read the file ListedesCassette.txt and we use a loop to check if the tape requested exists in the cassette file; if it does we get a message of its existence: FOUND and we pass the following:
-
     d. The amount of tapes taken
     
 When we give the quantity borrowed, we add to the quantity available in the file ListedesCassette.txt. There is an update every time a borrower returns a cassette.
