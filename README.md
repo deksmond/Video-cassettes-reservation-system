@@ -72,5 +72,5 @@ After an addititon of the amount borrowed to the quantity in the file, we get a 
 We use this information to browse in the file and when we find the borrower, it deletes all the details in relation to this borrower. In the case where the name given is different from what is in the file, it displays an error message: THIS BORROWER DOES NOT EXIST.
  At the end we use the pointer pborne with fclose() to stop the access to the file DetailsdesEprinters.txt.
  
-VERY IMPORTANT
+VERY IMPORTANT - 
 To browse the two files DetailsofPackers.txt and ListdesCassette.txt we use a temporary file tmp.txt to read and write for all manipulations.
